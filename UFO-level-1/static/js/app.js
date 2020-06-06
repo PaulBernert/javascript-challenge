@@ -1,6 +1,5 @@
 // Initialize Data and Miscellaneous
 let tableData = data;
-
 buildTable(tableData);
 
 //jQuery DateTime
@@ -8,6 +7,12 @@ $('#datetime').on('keyup', function(){
   let dateValue = $(this).val()
   let data = searchDate(dateValue, tableData)
   buildTable(data)
+})
+
+//Filter button
+$('#reset-btn').on("click", function() {
+  document.getElementById("ufoForm").reset();
+  return buildTable(tableData)
 })
 
 //Search by Date

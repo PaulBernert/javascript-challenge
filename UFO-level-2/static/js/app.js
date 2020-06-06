@@ -1,6 +1,6 @@
 // Initialize Data and Miscellaneous
 let tableData = data;
-
+let resetButton = d3.select('#reset-btn');
 buildTable(tableData);
 
 //jQuery DateTime
@@ -38,6 +38,11 @@ $('#shape').on('keyup', function(){
   buildTable(data)
 })
 
+//Filter button
+$('#reset-btn').on("click", function() {
+  document.getElementById("ufoForm").reset();
+  return buildTable(tableData)
+})
 
 //Search by Date
 function searchDate(dateValue, data) {
